@@ -4,6 +4,8 @@
 
 #include "Player.h"
 
+#include <memory>
+
 #include "EngineBase/EngineBase.h"
 
 Player::Player()

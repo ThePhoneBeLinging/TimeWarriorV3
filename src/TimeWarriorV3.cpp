@@ -5,23 +5,41 @@
 #include "TimeWarriorV3.h"
 #include "EngineBase/EngineBase.h"
 #include <iostream>
+#include <memory>
 
 #include "Objects/Player.h"
+#include "Textures/TextureController.h"
 
 
-void update(double deltaTime)
+void TimeWarriorV3::init()
 {
-
+    TextureController::initTextures();
+    playerVector_.resize(5);
+    currentPlayerIndex_ = 0;
+    playerVector_[0] = std::make_shared<Player>();
+    EngineBase::registerUpdateFunction(update);
 }
 
-int main()
+void TimeWarriorV3::reset()
 {
-    // TODO SETUP SOMETHING
-    EngineBase::init();
-    EngineBase::getGraphicsLibrary()->loadTexture("../../Resources/Player/Ghost4Right.png");
-    Player player = Player();
-    EngineBase::registerUpdateFunction(&update);
-    EngineBase::getGraphicsLibrary()->startWindow();
+    playerVector_[currentPlayerIndex_] = std::make_shared<Player>();
+    std::cout<< "RESET HIT" << std::endl;
 }
 
+void TimeWarriorV3::handleKeyPresses()
+{
+    if (not enterPressed_ && EngineBase::getGraphicsLibrary()->isKeyPressed(ENGINEBASE_KEY_ENTER))
+    {
+        enterPressed_ = true;
+        reset();
+    }
+    else if (enterPressed_ && EngineBase::getGraphicsLibrary()->isKeyReleased(ENGINEBASE_KEY_ENTER))
+    {
+        enterPressed_ = false;
+    }
+}
 
+void TimeWarriorV3::update(double deltaTime)
+{
+    handleKeyPresses();
+}
