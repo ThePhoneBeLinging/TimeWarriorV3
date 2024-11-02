@@ -12,6 +12,7 @@ add_executable(TimeWarriorV3
         Textures/TextureController.cpp
         Textures/TextureController.h
         Textures/TextureEnum.h
+        Textures/ZValues.h
 )
 
 target_link_libraries(TimeWarriorV3 PRIVATE

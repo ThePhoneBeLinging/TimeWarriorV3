@@ -6,6 +6,7 @@
 
 #include <memory>
 
+#include "../Textures/ZValues.h"
 #include "EngineBase/EngineBase.h"
 
 Player::Player()
@@ -14,4 +15,5 @@ Player::Player()
     EngineBase::addDrawAble(drawAble_);
     drawAble_->setHeight(50);
     drawAble_->setWidth(50);
+    drawAble_->setZ(PLAYER);
 }
