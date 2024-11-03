@@ -17,16 +17,17 @@ void TimeWarriorV3::init()
     playerVector_.resize(5);
     currentPlayerIndex_ = 0;
     playerVector_[0] = std::make_shared<Player>();
+    currentPlayer_ = playerVector_[0];
     EngineBase::registerUpdateFunction(update);
 }
 
 void TimeWarriorV3::reset()
 {
-    playerVector_[currentPlayerIndex_] = std::make_shared<Player>();
-    std::cout<< "RESET HIT" << std::endl;
+    playerVector_[currentPlayerIndex_++] = std::make_shared<Player>();
+    currentPlayerIndex_ %= 5;
 }
 
-void TimeWarriorV3::handleKeyPresses()
+void TimeWarriorV3::handleKeyPresses(const double deltaTime)
 {
     if (not enterPressed_ && EngineBase::getGraphicsLibrary()->isKeyPressed(ENGINEBASE_KEY_ENTER))
     {
@@ -37,9 +38,28 @@ void TimeWarriorV3::handleKeyPresses()
     {
         enterPressed_ = false;
     }
+    int deltaX = 0;
+    int deltaY = 0;
+    if (EngineBase::getGraphicsLibrary()->isKeyDown(ENGINEBASE_KEY_S))
+    {
+        deltaY--;
+    }
+    if (EngineBase::getGraphicsLibrary()->isKeyDown(ENGINEBASE_KEY_W))
+    {
+        deltaY++;
+    }
+    if (EngineBase::getGraphicsLibrary()->isKeyDown(ENGINEBASE_KEY_A))
+    {
+        deltaX++;
+    }
+    if (EngineBase::getGraphicsLibrary()->isKeyDown(ENGINEBASE_KEY_D))
+    {
+        deltaX--;
+    }
+    currentPlayer_->move(deltaX,deltaY,deltaTime);
 }
 
 void TimeWarriorV3::update(double deltaTime)
 {
-    handleKeyPresses();
+    handleKeyPresses(deltaTime);
 }
