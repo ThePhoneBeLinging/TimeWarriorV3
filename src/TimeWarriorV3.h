@@ -15,7 +15,6 @@ public:
     static void init();
     static void update(double deltaTime);
 private:
-    static inline std::shared_ptr<Player> currentPlayer_;
     static void reset();
     static void handleKeyPresses(double deltaTime);
     static inline bool enterPressed_;

@@ -17,7 +17,6 @@ void TimeWarriorV3::init()
     playerVector_.resize(5);
     currentPlayerIndex_ = 0;
     playerVector_[0] = std::make_shared<Player>();
-    currentPlayer_ = playerVector_[0];
     EngineBase::registerUpdateFunction(update);
 }
 
@@ -56,7 +55,7 @@ void TimeWarriorV3::handleKeyPresses(const double deltaTime)
     {
         deltaX--;
     }
-    currentPlayer_->move(deltaX,deltaY,deltaTime);
+     playerVector_[currentPlayerIndex_]->move(deltaX,deltaY,deltaTime);
 }
 
 void TimeWarriorV3::update(double deltaTime)
