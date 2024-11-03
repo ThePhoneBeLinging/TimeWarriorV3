@@ -11,6 +11,7 @@ class Player
 {
 public:
     Player();
+    void move(double x, double y, double deltaTime) const;
 private:
     std::shared_ptr<DrawAble> drawAble_;
 };

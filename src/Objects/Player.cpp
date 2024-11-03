@@ -19,3 +19,12 @@ Player::Player()
     drawAble_->setZ(PLAYER);
     drawAble_->setTextureIndex(PlayerDown);
 }
+
+void Player::move(double x, double y, const double deltaTime) const
+{
+    int movementSpeed = 500;
+    x = x * movementSpeed * deltaTime;
+    y = y * movementSpeed * deltaTime;
+    drawAble_->setX(drawAble_->getX() + x);
+    drawAble_->setY(drawAble_->getY() + y);
+}
