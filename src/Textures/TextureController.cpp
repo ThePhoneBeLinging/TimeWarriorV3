@@ -4,7 +4,6 @@
 
 #include "TextureController.h"
 
-#include "TextureEnum.h"
 #include "EngineBase/EngineBase.h"
 #include "GraphicsInterface/IGraphicsLibrary.h"
 
@@ -15,4 +14,7 @@ void TextureController::initTextures()
     std::string dotPNG = ".png";
 
     graphicsLib->loadTexture(prePrend + "Player/PlayerRight" + dotPNG);
+    graphicsLib->loadTexture(prePrend + "Player/PlayerDown" + dotPNG);
+    graphicsLib->loadTexture(prePrend + "Player/PlayerLeft" + dotPNG);
+    graphicsLib->loadTexture(prePrend + "Player/PlayerUp" + dotPNG);
 }

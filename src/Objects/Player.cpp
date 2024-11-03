@@ -6,6 +6,7 @@
 
 #include <memory>
 
+#include "../Textures/TextureEnum.h"
 #include "../Textures/ZValues.h"
 #include "EngineBase/EngineBase.h"
 
@@ -16,4 +17,5 @@ Player::Player()
     drawAble_->setHeight(50);
     drawAble_->setWidth(50);
     drawAble_->setZ(PLAYER);
+    drawAble_->setTextureIndex(PlayerDown);
 }

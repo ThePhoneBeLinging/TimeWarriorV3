@@ -8,6 +8,9 @@
 enum TextureEnum
 {
     PlayerRight,
+    PlayerDown,
+    PlayerLeft,
+    PlayerUp,
 };
 
 #endif //TEXTUREENUM_H
