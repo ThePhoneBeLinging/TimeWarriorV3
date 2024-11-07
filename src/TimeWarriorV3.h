@@ -18,7 +18,7 @@ private:
     static void reset();
     static void handleKeyPresses(double deltaTime);
     static inline bool enterPressed_;
-    static inline std::vector<std::shared_ptr<Player>> playerVector_;
+    static inline std::vector<std::unique_ptr<Player>> playerVector_;
     static inline int currentPlayerIndex_;
 };
 

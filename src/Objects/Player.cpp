@@ -20,6 +20,11 @@ Player::Player()
     drawAble_->setTextureIndex(PlayerDown);
 }
 
+Player::~Player()
+{
+    EngineBase::removeDrawAble(*(drawAble_->getID()));
+}
+
 void Player::move(double x, double y, const double deltaTime) const
 {
     int movementSpeed = 500;

@@ -3,8 +3,8 @@
 //
 
 #include "TimeWarriorV3.h"
+
 #include "EngineBase/EngineBase.h"
-#include <iostream>
 #include <memory>
 
 #include "Objects/Player.h"
@@ -16,14 +16,14 @@ void TimeWarriorV3::init()
     TextureController::initTextures();
     playerVector_.resize(5);
     currentPlayerIndex_ = 0;
-    playerVector_[0] = std::make_shared<Player>();
+    playerVector_[0] = std::make_unique<Player>();
     EngineBase::registerUpdateFunction(update);
 }
 
 void TimeWarriorV3::reset()
 {
-    playerVector_[currentPlayerIndex_++] = std::make_shared<Player>();
-    currentPlayerIndex_ %= 5;
+    playerVector_[++currentPlayerIndex_] = std::make_unique<Player>();
+    currentPlayerIndex_ %= 4;
 }
 
 void TimeWarriorV3::handleKeyPresses(const double deltaTime)

@@ -4,8 +4,6 @@
 
 #ifndef TEXTURECONTROLLER_H
 #define TEXTURECONTROLLER_H
-#include <string>
-#include <__hash_table>
 
 
 class TextureController
