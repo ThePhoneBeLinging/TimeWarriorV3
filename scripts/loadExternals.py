@@ -25,8 +25,8 @@ def main():
 
     # List of repository URLs to clone or pull
     repo_urls = [
-        'https://github.com/thephonebelinging/Utility.git',
-        'https://github.com/thephonebelinging/EngineBase.git',
+        'git@github.com:thephonebelinging/Utility.git',
+        'git@github.com:ThePhoneBeLinging/EngineBase.git',
         # Add more repository URLs as needed
     ]
 
