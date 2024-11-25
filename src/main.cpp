@@ -6,9 +6,5 @@
 
 int main()
 {
-    // TODO SETUP SOMETHING
-    EngineBase::init();
     TimeWarriorV3::init();
-
-    EngineBase::getGraphicsLibrary()->startWindow();
 }

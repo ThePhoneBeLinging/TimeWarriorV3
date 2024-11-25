@@ -5,9 +5,7 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_executable(TimeWarriorV3
         TimeWarriorV3.cpp
-        Objects/Player.cpp
         main.cpp
-        Textures/TextureController.cpp
 )
 
 target_link_libraries(TimeWarriorV3 PRIVATE

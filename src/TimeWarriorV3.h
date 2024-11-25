@@ -4,22 +4,17 @@
 
 #ifndef TIMEWARRIORV3_H
 #define TIMEWARRIORV3_H
-#include <vector>
+#include <memory>
 
-#include "Objects/Player.h"
+#include "EngineBase/EngineBase.h"
 
 
 class TimeWarriorV3
 {
 public:
     static void init();
-    static void update(double deltaTime);
 private:
-    static void reset();
-    static void handleKeyPresses(double deltaTime);
-    static inline bool enterPressed_;
-    static inline std::vector<std::unique_ptr<Player>> playerVector_;
-    static inline int currentPlayerIndex_;
+    static inline std::shared_ptr<EngineBase> engineBase_;
 };
 
 
