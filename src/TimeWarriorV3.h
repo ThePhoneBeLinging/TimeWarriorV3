@@ -14,6 +14,7 @@ class TimeWarriorV3
 public:
     static void init();
 private:
+    static void update();
     static inline std::shared_ptr<EngineBase> engineBase_;
 };
 
