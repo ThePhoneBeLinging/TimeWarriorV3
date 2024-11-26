@@ -13,7 +13,7 @@ class Room
 {
 public:
     explicit Room(std::shared_ptr<EngineBase> engineBase);
-private:
+protected:
     int currentPlayerIndex;
     int maxPlayers = 3;
     std::vector<std::shared_ptr<Player>> playerVector_;
