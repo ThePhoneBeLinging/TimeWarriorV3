@@ -9,11 +9,8 @@
 Room::Room(std::shared_ptr<EngineBase> engineBase) : engineBase_(std::move(engineBase))
 {
     playerVector_.resize(5);
-    currentPlayerIndex = 0;
-    playerVector_[0] = std::make_shared<Player>();
-    engineBase_->registerDrawAble(playerVector_[currentPlayerIndex]->getDrawAble());
-    playerVector_[0]->getDrawAble()->setX(entryLocation_.first);
-    playerVector_[0]->getDrawAble()->setY(entryLocation_.second);
+    currentPlayerIndex_ = 0;
+    createPlayer();
 }
 
 void Room::resetHit() const
@@ -31,4 +28,12 @@ void Room::resetHit() const
 void Room::setEntryLocation(std::pair<int, int> entryLocation)
 {
     entryLocation_ = entryLocation;
+}
+
+void Room::createPlayer()
+{
+    playerVector_[currentPlayerIndex_] = std::make_shared<Player>();
+    engineBase_->registerDrawAble(playerVector_[currentPlayerIndex_]->getDrawAble());
+    playerVector_[currentPlayerIndex_]->getDrawAble()->setX(entryLocation_.first);
+    playerVector_[currentPlayerIndex_]->getDrawAble()->setY(entryLocation_.second);
 }
