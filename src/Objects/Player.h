@@ -11,6 +11,7 @@ class Player
 {
 public:
     Player();
+    void resetPlayer();
     std::shared_ptr<DrawAble> getDrawAble();
 private:
     std::shared_ptr<DrawAble> drawAble_;

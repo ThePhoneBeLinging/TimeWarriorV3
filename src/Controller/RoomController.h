@@ -10,9 +10,10 @@
 class RoomController
 {
 public:
-    RoomController();
+    explicit RoomController(std::shared_ptr<EngineBase> engineBase);
 
 private:
+    std::shared_ptr<EngineBase> engineBase_;
     std::vector<std::shared_ptr<Room>> rooms_;
 };
 

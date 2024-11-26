@@ -10,6 +10,11 @@ Player::Player() : drawAble_(std::make_shared<DrawAble>())
     drawAble_->setWidth(50);
 }
 
+void Player::resetPlayer()
+{
+    //TODO
+}
+
 std::shared_ptr<DrawAble> Player::getDrawAble()
 {
     return drawAble_;
