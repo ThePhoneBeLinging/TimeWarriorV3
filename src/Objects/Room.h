@@ -13,7 +13,7 @@ class Room
 {
 public:
     explicit Room(std::shared_ptr<EngineBase> engineBase);
-    void resetHit() const;
+    void resetHit();
     void setEntryLocation(std::pair<int,int> entryLocation);
     void createPlayer();
 protected:

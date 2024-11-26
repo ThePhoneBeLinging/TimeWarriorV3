@@ -13,7 +13,7 @@ Room::Room(std::shared_ptr<EngineBase> engineBase) : engineBase_(std::move(engin
     createPlayer();
 }
 
-void Room::resetHit() const
+void Room::resetHit()
 {
     for (const auto& player : playerVector_)
     {
@@ -23,6 +23,8 @@ void Room::resetHit() const
         }
         player->resetPlayer();
     }
+    ++currentPlayerIndex_ %= maxPlayers;
+    createPlayer();
 }
 
 void Room::setEntryLocation(std::pair<int, int> entryLocation)
