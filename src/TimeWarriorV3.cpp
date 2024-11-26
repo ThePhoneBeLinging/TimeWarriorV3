@@ -12,6 +12,7 @@
 void TimeWarriorV3::init()
 {
     engineBase_ = std::make_shared<EngineBase>();
+    roomController_ = std::make_unique<RoomController>(engineBase_);
     std::thread thread(update);
     engineBase_->launch();
     thread.join();

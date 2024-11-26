@@ -6,6 +6,7 @@
 #define TIMEWARRIORV3_H
 #include <memory>
 
+#include "Controller/RoomController.h"
 #include "EngineBase/EngineBase.h"
 
 
@@ -16,6 +17,7 @@ public:
 private:
     static void update();
     static inline std::shared_ptr<EngineBase> engineBase_;
+    static inline std::unique_ptr<RoomController> roomController_;
 };
 
 
