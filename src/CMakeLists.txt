@@ -14,7 +14,6 @@ add_executable(TimeWarriorV3
         Controller/RoomController.h
         Objects/Rooms/Room1.cpp
         Objects/Rooms/Room1.h
-        Objects/Heading.h
 )
 
 target_link_libraries(TimeWarriorV3 PRIVATE
