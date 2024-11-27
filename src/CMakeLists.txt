@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD 23)
 add_executable(TimeWarriorV3
         TimeWarriorV3.cpp
         main.cpp
-        Objects/Room.cpp
-        Objects/Room.h
+        Objects/Rooms/Room.cpp
+        Objects/Rooms/Room.h
         Objects/Player.cpp
         Objects/Player.h
         Controller/RoomController.cpp

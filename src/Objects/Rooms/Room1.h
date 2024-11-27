@@ -4,7 +4,7 @@
 
 #ifndef ROOM1_H
 #define ROOM1_H
-#include "../Room.h"
+#include "Room.h"
 
 
 class Room1 : public Room
