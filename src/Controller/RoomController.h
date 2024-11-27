@@ -13,6 +13,9 @@ public:
     explicit RoomController(std::shared_ptr<EngineBase> engineBase);
 
 private:
+    void setActiveRoom(int firstIndex, int secondIndex);
+    int firstActiveIndex_;
+    int secondActiveIndex_;
     std::shared_ptr<EngineBase> engineBase_;
     std::vector<std::shared_ptr<Room>> rooms_;
 };
