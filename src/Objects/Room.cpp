@@ -6,7 +6,7 @@
 
 #include <utility>
 
-Room::Room(std::shared_ptr<EngineBase> engineBase) : engineBase_(std::move(engineBase))
+Room::Room(std::shared_ptr<EngineBase> engineBase) : engineBase_(std::move(engineBase)), enterPressed_(false)
 {
     playerVector_.resize(5);
     currentPlayerIndex_ = 0;
@@ -27,9 +27,32 @@ void Room::resetHit()
     createPlayer();
 }
 
-void Room::setEntryLocation(std::pair<int, int> entryLocation)
+void Room::setEntryLocation(const std::pair<int, int>& entryLocation)
 {
     entryLocation_ = entryLocation;
+}
+
+void Room::handleMovement()
+{
+    if (engineBase_->getGraphicsLibrary()->isKeyDown(ENGINEBASE_KEY_W))
+    {
+
+    }
+
+    if (engineBase_->getGraphicsLibrary()->isKeyDown(ENGINEBASE_KEY_S))
+    {
+
+    }
+
+    if (engineBase_->getGraphicsLibrary()->isKeyDown(ENGINEBASE_KEY_D))
+    {
+
+    }
+
+    if (engineBase_->getGraphicsLibrary()->isKeyDown(ENGINEBASE_KEY_A))
+    {
+
+    }
 }
 
 void Room::createPlayer()

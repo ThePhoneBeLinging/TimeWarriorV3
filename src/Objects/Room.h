@@ -14,9 +14,11 @@ class Room
 public:
     explicit Room(std::shared_ptr<EngineBase> engineBase);
     void resetHit();
-    void setEntryLocation(std::pair<int,int> entryLocation);
-    void createPlayer();
+    void setEntryLocation(const std::pair<int,int>& entryLocation);
+    void handleMovement();
 protected:
+    void createPlayer();
+    bool enterPressed_;
     int currentPlayerIndex_;
     int maxPlayers = 3;
     std::vector<std::shared_ptr<Player>> playerVector_;
