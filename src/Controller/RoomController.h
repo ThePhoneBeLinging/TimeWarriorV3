@@ -11,11 +11,11 @@ class RoomController
 {
 public:
     explicit RoomController(std::shared_ptr<EngineBase> engineBase);
-    void resetHit() const;
-    void update() const;
+    void update();
 
 private:
     void setActiveRoom(int firstIndex, int secondIndex);
+    bool enterPressed_;
     int firstActiveIndex_;
     int secondActiveIndex_;
     std::shared_ptr<EngineBase> engineBase_;

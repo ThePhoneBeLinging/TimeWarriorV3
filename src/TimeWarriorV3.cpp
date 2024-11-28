@@ -22,6 +22,6 @@ void TimeWarriorV3::update()
 {
     while (not engineBase_->getGraphicsLibrary()->toCloseWindow())
     {
-        std::cout << "Update loop" << std::endl;
+        roomController_->update();
     }
 }

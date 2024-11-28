@@ -4,6 +4,7 @@
 
 #include "Room.h"
 
+#include <iostream>
 #include <utility>
 
 Room::Room(std::shared_ptr<EngineBase> engineBase) : engineBase_(std::move(engineBase)), enterPressed_(false)
