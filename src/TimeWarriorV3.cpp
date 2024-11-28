@@ -13,15 +13,15 @@ void TimeWarriorV3::init()
 {
     engineBase_ = std::make_shared<EngineBase>();
     roomController_ = std::make_unique<RoomController>(engineBase_);
-    std::thread thread(update);
+    engineBase_->registerUpdateFunction(update);
     engineBase_->launch();
-    thread.join();
 }
 
-void TimeWarriorV3::update()
+void TimeWarriorV3::update(double deltaTime)
 {
     while (not engineBase_->getGraphicsLibrary()->toCloseWindow())
     {
-        roomController_->update();
+        std::cout << "update" << std::endl;
+        roomController_->update(deltaTime);
     }
 }

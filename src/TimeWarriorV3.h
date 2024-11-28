@@ -15,7 +15,7 @@ class TimeWarriorV3
 public:
     static void init();
 private:
-    static void update();
+    static void update(double deltaTime);
     static inline std::shared_ptr<EngineBase> engineBase_;
     static inline std::unique_ptr<RoomController> roomController_;
 };

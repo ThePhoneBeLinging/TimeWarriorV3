@@ -11,7 +11,7 @@ class RoomController
 {
 public:
     explicit RoomController(std::shared_ptr<EngineBase> engineBase);
-    void update();
+    void update(double deltaTime);
 
 private:
     void setActiveRoom(int firstIndex, int secondIndex);

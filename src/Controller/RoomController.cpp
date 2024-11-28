@@ -12,7 +12,7 @@ RoomController::RoomController(std::shared_ptr<EngineBase> engineBase) : engineB
     rooms_[0].push_back(std::make_shared<Room1>(engineBase_));
 }
 
-void RoomController::update()
+void RoomController::update(double deltaTime)
 {
     rooms_[firstActiveIndex_][secondActiveIndex_]->handleMovement();
 

@@ -13,6 +13,7 @@ public:
     Player();
     void resetPlayer();
     std::shared_ptr<DrawAble> getDrawAble();
+    void update(float deltaTime);
 private:
     std::shared_ptr<DrawAble> drawAble_;
 };

@@ -19,3 +19,8 @@ std::shared_ptr<DrawAble> Player::getDrawAble()
 {
     return drawAble_;
 }
+
+void Player::update(float deltaTime)
+{
+    //
+}
