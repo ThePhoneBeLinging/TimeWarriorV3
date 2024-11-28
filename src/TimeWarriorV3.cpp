@@ -17,11 +17,11 @@ void TimeWarriorV3::init()
     engineBase_->launch();
 }
 
-void TimeWarriorV3::update(double deltaTime)
+void TimeWarriorV3::update(const double deltaTime)
 {
     while (not engineBase_->getGraphicsLibrary()->toCloseWindow())
     {
-        std::cout << "update" << std::endl;
+        std::cout << deltaTime << std::endl;
         roomController_->update(deltaTime);
     }
 }
